@@ -224,7 +224,7 @@ input.type{width:100%;padding:14px;border:1px solid var(--line);border-radius:12
   <footer class="foot">
     Словарь HSK: <a href="https://github.com/drkameleon/complete-hsk-vocabulary" target="_blank" rel="noopener">complete-hsk-vocabulary</a> © Yanis Zafirópulos ·
     транскрипции: <a href="https://github.com/open-dict-data/ipa-dict" target="_blank" rel="noopener">ipa-dict</a> © dohliam — лицензия MIT (см. LICENSES.txt).
-    Книги — пересказы классических произведений, свободных от авторских прав. ИИ-функции работают на Claude (Anthropic).
+    Книги — пересказы классических произведений, свободных от авторских прав.
   </footer>
 </div>
 
@@ -1742,6 +1742,7 @@ async function aiMakeBook(topic){
 
 /* ---------- ЭКРАНЫ ---------- */
 function render(){
+  { const aiTab=document.querySelector('nav.tabs [data-tab="ai"]'); const off = aiReady && !AI; if(aiTab) aiTab.style.display = off ? "none" : ""; if(off && S.tab==="ai") S.tab="home"; }
   document.body.className = S.lang;
   document.querySelectorAll(".lang").forEach(b=>b.classList.toggle("on", b.dataset.lang===S.lang));
   document.querySelectorAll("nav.tabs button").forEach(b=>b.classList.toggle("on", b.dataset.tab===S.tab));
